@@ -5,12 +5,81 @@
     <title></title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/23e307dc1b.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   </head>
   <body>
 
+    <div class="container-1600">
+      <div class="game-window-content">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="h2 text-primary">Choose</p>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col-12 col-lg-4 text-center">
+            <button class="btn btn-primary" onclick='rockClick()'>
+              <i class="fas fa-hand-rock"></i>
+              Rock
+            </button>
+          </div>
+
+          <div class="col-12 col-lg-4 text-center">
+            <button class="btn btn-primary" onclick='paperClick()'>
+              <i class="fas fa-hand-paper"></i>
+              paper
+            </button>
+          </div>
+
+          <div class="col-12 col-lg-4 text-center">
+            <button class="btn btn-primary" onclick='scissorsClick()'>
+              <i class="fas fa-hand-scissors"></i>
+              Scissors
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="users-score">
+      <p>
+        Wins: <span id="users-wins"></span>&nbsp;
+        Ties: <span id="users-ties"></span>&nbsp;
+        Losses: <span id="users-losses"></span>
+      </p>
+    </div>
+    <div class="score-reset">
+      <button class="btn btn-danger" onclick="resetScore()">Reset Score</button>
+    </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <div class="container-1600">
+      <div class="game-window-content">
+        <div class="row my-4 text-center">
+          <div class="col-12 col-md-6">
+            <p class="h3 text-primary">Players Pick</p>
+            <p id="player-pick-icon"></p>
+          </div>
+          <div class="col-12 col-md-6">
+            <p class="h3 text-primary">Computers Pick</p>
+            <p id="computers-pick-icon"></p>
+          </div>
+        </div>
+
+        <div class="row my-5">
+          <div class="col-12 text-center">
+            <p id="player-outcome"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="game.js"></script>
   </body>
 </html>
