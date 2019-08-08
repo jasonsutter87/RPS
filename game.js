@@ -1,20 +1,17 @@
 /** Represents a players Turn  for Rock. */
 const rockClick = () => {
-  setTimeout(() =>{}, 500)
   document.getElementById('player-pick-icon').innerHTML =  '<i class="fas fa-hand-rock" aria-hidden="true"></i>';
   computersTurn('rock')
 }
 
 /** Represents a players Turn  for Paper. */
 const paperClick = () => {
-  setTimeout(() =>{}, 500)
   document.getElementById('player-pick-icon').innerHTML =  '<i class="fas fa-hand-paper" aria-hidden="true"></i>';
   computersTurn('paper')
 }
 
 /** Represents a players Turn  for Scissors. */
 const scissorsClick = () => {
-  setTimeout(() =>{}, 500)
   document.getElementById('player-pick-icon').innerHTML =  '<i class="fas fa-hand-scissors" aria-hidden="true"></i>';
   computersTurn('scissors')
 }
@@ -30,7 +27,6 @@ const computersTurn = (playersPick) => {
     ['scissors','rock', 'paper']
   ]
   let computersPick =  choices[Math.round(Math.random() * 2)][Math.round(Math.random() * 2)];
-  setTimeout(() =>{}, 5000)
   if(computersPick == 'rock') {
       document.getElementById('computers-pick-icon').innerHTML =  '<i class="fas fa-hand-rock" aria-hidden="true"></i>';
   } else if ( computersPick == 'paper' ) {
@@ -46,13 +42,12 @@ const computersTurn = (playersPick) => {
 * @param {string} scoreType - The type out win/lose outcome.
 */
 const increaseScore = (scoreType) => {
-  let score;
-  score = localStorage.getItem(scoreType);
+  let score = localStorage.getItem(scoreType);
   score++
   localStorage.setItem(scoreType, score);
 
   /** Set scores from localStorage */
-  document.getElementById(`users-${scoreType}`).innerHTML = localStorage.getItem(scoreType);
+  document.getElementById(`users-${scoreType}`).innerHTML = score;
 }
 
 /**
@@ -75,7 +70,7 @@ const winLogic = (playersPick, computersPick) => {
       document.getElementById('player-outcome').innerHTML = 'Player Wins against the computer'
     } else{
       increaseScore('losses')
-      document.getElementById('player-outcome').innerHTML = 'Player Lost against the computer'
+      document.getElementById('player-outcome').innerHTML = 'Player Losses against the computer'
     }
 }
 
